@@ -40,3 +40,9 @@ Return [0, 2, 3]
 
 ### (LeetCode, Easy) Reverse Integer
 :warning: NOTE: in progress
+
+### (Personal, Basic) Bubble Sort
+
+Basic implementation of Bubble Sort.
+
+
