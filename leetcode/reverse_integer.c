@@ -30,7 +30,21 @@
 // Question Functions
 //////////////////////////////////////////////////////
 int reverse(int x){
+    int negate = (x < 0 ? -1 : 1);
+    int result = 0;
 
+    if (x == 0x80000000)
+        return 0;
+    x = abs(x);
+    while(x) {
+        if (result > (0x80000000/10))
+            return 0;      // assume overflow
+        result *= 10;      // shift digits
+        result += x % 10;  // add digit
+        x /= 10;           // shift x
+    }
+
+    return (result * negate);
 }
 
 //////////////////////////////////////////////////////
@@ -41,8 +55,11 @@ int main(void) {
     int *array;
 
     printf("reverse_integer.c:\n");
-    reverse(123);
-    reverse(-123);
-    reverse(120);
+    printf("result: %d\n", reverse(123));
+    printf("result: %d\n", reverse(-123));
+    printf("result: %d\n", reverse(120));
+    printf("result: %d\n", reverse(1534236469)); 
+    printf("result: %d\n", reverse(-2147483648)); 
+    printf("result: %d\n", reverse(214748365));     
 }
 

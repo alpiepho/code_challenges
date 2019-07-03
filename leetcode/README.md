@@ -39,10 +39,18 @@ Because nums[0] + nums[2] + nums[3] = 2 + 6 + 1 = 9
 Return [0, 2, 3]
 
 ### (LeetCode, Easy) Reverse Integer
-:warning: NOTE: in progress
+
+After some attention to overflows, this passes LeetCode.  Not sure why memory is not better.
 
 ### (Personal, Basic) Bubble Sort
 
 Basic implementation of Bubble Sort.
 
+### (Personal, Basic) Quick Sort
+
+Basic implementation of Quick Sort.
+
+### (LeetCode, Easy) Palindrone Integer
+
+Determine if integer is palindrone.  Easy, using reverse_integer.c.
 
