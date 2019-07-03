@@ -54,3 +54,7 @@ Basic implementation of Quick Sort.
 
 Determine if integer is palindrone.  Easy, using reverse_integer.c.
 
+### (LeetCode, Easy) Valid Paren
+
+Determine if string has valid parens. Tricky small string edge cases.
+
