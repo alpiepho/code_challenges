@@ -58,3 +58,8 @@ Determine if integer is palindrone.  Easy, using reverse_integer.c.
 
 Determine if string has valid parens. Tricky small string edge cases.
 
+### (LeetCode, Easy) Roman to Integer
+
+Convert roman number string to integer.
+
+
