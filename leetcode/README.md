@@ -62,4 +62,7 @@ Determine if string has valid parens. Tricky small string edge cases.
 
 Convert roman number string to integer.
 
+### (LeetCode, Easy) Lognest Prefix
+
+Return longest prefix of given array of strings.
 
