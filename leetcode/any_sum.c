@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// WARNING: finish
+
+
 // gcc any_sum.c -o runme ; ./runme
 
 // Expand 'Two Sum' to look for any number values from nums that sum to the value 'target'.  Each num is used once.  Size of solution array can be 1 to n.
@@ -77,27 +80,27 @@ void freeAccum(void) {
 
 
 int *anySum(int * nums, int numSize, int target, int *returnSize) {
-    int i, j;
-    int rollOver = 0;
-    int *array = 0;
-    *returnSize = 0;
+    // int i, j;
+    // int rollOver = 0;
+    // int *array = 0;
+    // *returnSize = 0;
 
-    size = numSize;
-    initAccum();
+    // size = numSize;
+    // initAccum();
 
-    while (!rollOver) {
-        printAccum();
-        if (sumFromAccum() == target) {
-            // get number bits set
-            // build array
-            // set index from bits, ie index == position
-            // set resturnSize
-            // return
+    // while (!rollOver) {
+    //     printAccum();
+    //     if (sumFromAccum() == target) {
+    //         // get number bits set
+    //         // build array
+    //         // set index from bits, ie index == position
+    //         // set resturnSize
+    //         // return
 
-        }
-        rollOver = incAccum();
-    }
-    freeAccum();
+    //     }
+    //     rollOver = incAccum();
+    // }
+    // freeAccum();
     return 0;
 }
 
@@ -111,8 +114,9 @@ int main(void) {
     printf("any_sum.c:\n");
     {
         int nums[] = { 2,4,6,1};
-        array = anySum(nums, sizeof(nums)/sizeof(int), 9, &size);
-        printGiven(nums, sizeof(nums)/sizeof(int));
+        int numsSize = sizeof(nums)/sizeof(int);
+        array = anySum(nums, numsSize, 9, &size);
+        printGiven(nums, numsSize);
         printResult(array, size);
         if (array) { free(array); array = 0; }
     }

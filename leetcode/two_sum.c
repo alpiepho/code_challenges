@@ -75,15 +75,17 @@ int main(void) {
     printf("two_sum.c:\n");
     {
         int nums[] = { 2,7,11,15 };
-        array = twoSum(nums, sizeof(nums)/sizeof(int), 9, &size);
-        printGiven(nums, sizeof(nums)/sizeof(int));
+        int numsSize = sizeof(nums)/sizeof(int);
+        array = twoSum(nums, numsSize, 9, &size);
+        printGiven(nums, numsSize);
         printResult(array, size);
         if (array) { free(array); array = 0; }
     }
     {
         int nums[] = { 2,7,11,15,3,4,6 };
-        array = twoSum(nums, sizeof(nums)/sizeof(int), 7, &size);
-        printGiven(nums, sizeof(nums)/sizeof(int));
+        int numsSize = sizeof(nums)/sizeof(int);
+        array = twoSum(nums, numsSize, 7, &size);
+        printGiven(nums, numsSize);
         printResult(array, size);
         if (array) { free(array); array = 0; }
     }
