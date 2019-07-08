@@ -73,3 +73,7 @@ Return duplicate from sorted list.
 ### (Personal, Easy) Build Set
 
 Given a list of integers, return a set of unique integers from that list.
+
+### (LeetCode, Easy) Merge Two
+
+Merge 2 sorted linked lists.
