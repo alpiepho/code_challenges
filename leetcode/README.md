@@ -77,3 +77,7 @@ Given a list of integers, return a set of unique integers from that list.
 ### (LeetCode, Easy) Merge Two
 
 Merge 2 sorted linked lists.
+
+### (LeetCode, Easy) Remove Element
+
+Remove elements from array of integers.
