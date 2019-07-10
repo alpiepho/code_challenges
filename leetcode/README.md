@@ -81,3 +81,7 @@ Merge 2 sorted linked lists.
 ### (LeetCode, Easy) Remove Element
 
 Remove elements from array of integers.
+
+### (LeetCode, Easy) stStr
+
+Impelment strStr returning index of match.
