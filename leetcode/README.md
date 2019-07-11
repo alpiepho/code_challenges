@@ -84,4 +84,12 @@ Remove elements from array of integers.
 
 ### (LeetCode, Easy) stStr
 
-Impelment strStr returning index of match.
+Implement strStr returning index of match.
+
+### (LeetCode, Easy) Insert Position
+
+Return index where a given integer would be insertd in a sorted array.
+
+### (LeetCode, Easy) Count and Say
+
+Implement cout and say algorithm.
