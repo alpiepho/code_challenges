@@ -92,4 +92,8 @@ Return index where a given integer would be insertd in a sorted array.
 
 ### (LeetCode, Easy) Count and Say
 
-Implement cout and say algorithm.
+Implement count and say algorithm.
+
+### (LeetCode, Medium) Add two arrays
+
+Add digits of two arrays
