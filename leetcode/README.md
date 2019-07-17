@@ -97,3 +97,11 @@ Implement count and say algorithm.
 ### (LeetCode, Medium) Add two arrays
 
 Add digits of two arrays
+
+### (LeetCode, Medium) Find longest String
+
+Find longest non-repeating sub string
+
+### (LeetCode, Medium) Most Water
+
+Find max area of any 2 heights in given array.
