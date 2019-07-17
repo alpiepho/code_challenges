@@ -105,3 +105,7 @@ Find longest non-repeating sub string
 ### (LeetCode, Medium) Most Water
 
 Find max area of any 2 heights in given array.
+
+### (LeetCode, Medium - Shell) Word Frequency
+
+Given a text file of works, return a sorted count of the words
