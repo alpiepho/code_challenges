@@ -28,5 +28,15 @@
 
 #egrep -e '^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$|^[0-9]{3}-[0-9]{3}-[0-9]{4}$' file.txt
 
+# [ ]: Matches any one of a set characters
+# [ ] with hyphen: Matches any one of a range characters
+# ^: The pattern following it must occur at the beginning of each line
+# ^ with [ ] : The pattern must not contain any character in the set specified
+# $: The pattern preceding it must occur at the end of each line
+# . (dot): Matches any one character
+# \ (backslash): Ignores the special meaning of the character following it
+# *: zero or more occurrences of the previous character
+# (dot).*: Nothing or any numbers of characters.
+
 # LeetCode did not like my \d
 egrep -e '(^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$)|(^[0-9]{3}-[0-9]{3}-[0-9]{4}$)' file.txt
