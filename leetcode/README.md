@@ -109,3 +109,13 @@ Find max area of any 2 heights in given array.
 ### (LeetCode, Medium - Shell) Word Frequency
 
 Given a text file of works, return a sorted count of the words
+
+### (LeetCode, Medium) Integer to Roman
+
+Given integer return a string with roman number.
+
+### (LeetCode, Medium - Shell) Valid Phone
+
+Given a text file of numbers, use regex to return valid numbers
+
+
