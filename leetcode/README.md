@@ -118,4 +118,9 @@ Given integer return a string with roman number.
 
 Given a text file of numbers, use regex to return valid numbers
 
+### (LeetCode, Medium - Shell) Transpose
+
+Given a text file of space sperated strings, transpose the values
+(this kicked my butt, spent too many hours)
+
 
