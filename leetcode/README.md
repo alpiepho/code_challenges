@@ -82,7 +82,7 @@ Merge 2 sorted linked lists.
 
 Remove elements from array of integers.
 
-### (LeetCode, Easy) stStr
+### (LeetCode, Easy) strStr
 
 Implement strStr returning index of match.
 
@@ -123,4 +123,7 @@ Given a text file of numbers, use regex to return valid numbers
 Given a text file of space sperated strings, transpose the values
 (this kicked my butt, spent too many hours)
 
+### (LeetCode, Medium) strStr
+
+Implement string to integer.  Some of the fail cases like "- 234" tripped me up.
 
