@@ -127,3 +127,6 @@ Given a text file of space sperated strings, transpose the values
 
 Implement string to integer.  Some of the fail cases like "- 234" tripped me up.
 
+### (LeetCode, Medium) perutations
+
+Given array of numbers, produce array of arrays with permutations.
