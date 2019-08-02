@@ -24,10 +24,10 @@
 //////////////////////////////////////////////////////
 
 
-void show(int *returnArray, int returnSize) {
+void show(char *label, int *returnArray, int returnSize) {
     int i;
 
-    printf("given: [ ");
+    printf("%s[ ", label);
     for (i=0; i<returnSize; i++) {
         printf("%d", returnArray[i]);
         if (i < (returnSize-1))
@@ -83,6 +83,28 @@ void cleanup(int **returnArrays, int returnSize, int* returnColumnSizes){
 // Question Functions
 //////////////////////////////////////////////////////
 
+void swap(int *x, int *y) {
+	int temp; 
+	temp = *x; 
+	*x = *y; 
+	*y = temp; 
+} 
+
+void permute_inner(int* nums, int numsSize, int **buffer, int *col, int l, int r) { 
+    int i, j; 
+    if (l == r) {
+        show("", nums, numsSize);
+        for (j=0; j<numsSize; j++) buffer[*col][j] = nums[j];
+        *col += 1;
+    }
+    else { 
+        for (i = l; i <= r; i++) { 
+            swap((nums+l), (nums+i)); 
+            permute_inner(nums, numsSize, buffer, col, l+1, r); 
+            swap((nums+l), (nums+i)); //backtrack 
+        } 
+    } 
+} 
 
 /**
  * Return an array of arrays of size *returnSize.
@@ -90,7 +112,7 @@ void cleanup(int **returnArrays, int returnSize, int* returnColumnSizes){
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
-    int i, j, n;
+    int i, j, n, col = 0;
     int total;
     int *array;
     int **buffer;
@@ -101,19 +123,21 @@ int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes)
 
     // all columns are same size, n
     array = (int *)malloc(sizeof(int) * total);
-    for (i=0; i <= total; i++) array[i] = numsSize;
+    for (i=0; i < total; i++) array[i] = numsSize;
     *returnColumnSizes = array;
 
     buffer = (int **)malloc(sizeof(int *) * total);
     for (j=0; j < total; j++) {
         n = array[j];
         buffer[j] = (int *)malloc(sizeof(int) * n);
-        //DEBUG
-        for (i=0; i<n; i++) {
-            buffer[j][i] = i;
-        }
+        // DEBUG
+        // for (i=0; i<n; i++) {
+        //     buffer[j][i] = i;
+        // }
     }
 
+    // recursively generate permutations
+    permute_inner(nums, numsSize, buffer, &col, 0, numsSize-1); 
 
     return buffer;
 }
@@ -123,21 +147,26 @@ int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes)
 // Main
 //////////////////////////////////////////////////////
 int main(void) {
-    int result;
+    int returnSize;
+    int **returnArrays;
+    int *returnColumnSizes;
 
     printf("permutations.c:\n");
     {
         int nums[] = { 1,2 };
         int numsSize = sizeof(nums)/sizeof(int);
-        int returnSize;
-        int **returnArrays;
-        int *returnColumnSizes;
-        show(nums, numsSize);
+        show("given: ", nums, numsSize);
         returnArrays = permute(nums, numsSize, &returnSize, &returnColumnSizes);
         dump(returnArrays, returnSize, returnColumnSizes);
         cleanup(returnArrays, returnSize, returnColumnSizes);
-        returnArrays = 0;
-        returnColumnSizes = 0;
+    }
+    {
+        int nums[] = { 1,2,3 };
+        int numsSize = sizeof(nums)/sizeof(int);
+        show("given: ", nums, numsSize);
+        returnArrays = permute(nums, numsSize, &returnSize, &returnColumnSizes);
+        dump(returnArrays, returnSize, returnColumnSizes);
+        cleanup(returnArrays, returnSize, returnColumnSizes);
     }
 
     return 0;
