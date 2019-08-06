@@ -131,6 +131,12 @@ Implement string to integer.  Some of the fail cases like "- 234" tripped me up.
 
 Given array of numbers, produce array of arrays with permutations.
 
+
+### (Personal, Basic) Any Base Counter
+
+Given integers representing the max value for each digit, run a counter with for those digits. 
+
+
 ### (LeetCode, Medium) phone number letter combos
 
-Given string of numbers, return array of all letter strings from phone
+PENDING: Given string of numbers, return array of all letter strings from phone

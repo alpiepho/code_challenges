@@ -64,8 +64,8 @@ char * numStrs[] = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "
  * Note: The returned array must be malloced, assume caller calls free().
  */
 char ** letterCombinations(char * digits, int* returnSize){
-    int i, total;
-    char *p;
+    int i, index, total;
+    char *p, *q;
     char **returnStrs;
 
     // determine size of array
@@ -80,9 +80,22 @@ char ** letterCombinations(char * digits, int* returnSize){
     printf("total: %d\n", total);
     *returnSize = total;
 
+    returnStrs = (char **)malloc(sizeof(char *) * total);
+    p = digits;
+    index = 0;
+    while (*p) {
+        // allocate/init this permutation
+        returnStrs[index] = (char *)malloc(sizeof(char *) * strlen(digits));
+        returnStrs[index][0] = 0;
 
-    *returnSize = 0;
-    return 0;
+        q = numStrs[ (*p - '0') ];
+        
+        // move pointers for next permutation
+        p++;
+        index++;
+    }
+
+    return returnStrs;
 }
 
 
