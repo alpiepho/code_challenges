@@ -139,4 +139,12 @@ Given integers representing the max value for each digit, run a counter with for
 
 ### (LeetCode, Medium) phone number letter combos
 
-PENDING: Given string of numbers, return array of all letter strings from phone
+Given string of numbers, return array of all letter strings from phone
+
+### (LeetCode, Easy) Fizz Buzz Loop
+
+Implement Fizz Buzz problem with loop
+
+### (LeetCode, Easy) Fizz Buzz Recursive
+
+Implement Fizz Buzz problem with recursion

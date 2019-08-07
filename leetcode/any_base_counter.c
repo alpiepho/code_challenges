@@ -108,13 +108,10 @@ void cleanup(int **returnArrays, int returnSize, int* returnColumnSizes){
 void counter_increment(int* nums, int numsSize, int* accum){
     int place = numsSize-1;
 
-    //show("accum: ", accum, numsSize);
     accum[place] += 1;
-    //show("accum: ", accum, numsSize);
     // work backwards, add 1 to buffer[col][n] and carry if needed to n-1
     while (accum[place] > nums[place]) {
         accum[place] = 0; // reset place
-        //show("accum: ", accum, numsSize);
         if (place == 0)
             break;         // have we maxed out
         if (place > 0) accum[place-1] += 1; // carry to next plae
@@ -209,6 +206,15 @@ int main(void) {
     {
         int show_as_hex = 0;
         int nums[] = { 3,2,1 };
+        int numsSize = sizeof(nums)/sizeof(int);
+        show("given: ", nums, numsSize);
+        returnArrays = counter(nums, numsSize, &returnSize, &returnColumnSizes);
+        dump(returnArrays, returnSize, returnColumnSizes, show_as_hex);
+        cleanup(returnArrays, returnSize, returnColumnSizes);
+    }
+    {
+        int show_as_hex = 0;
+        int nums[] = { 2,2 };
         int numsSize = sizeof(nums)/sizeof(int);
         show("given: ", nums, numsSize);
         returnArrays = counter(nums, numsSize, &returnSize, &returnColumnSizes);
