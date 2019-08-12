@@ -109,12 +109,24 @@ function formatDate(userDate) {
 }
   
 console.log(formatDate("12/31/2014"));
-console.log(createCheckDigit("55555"));
 
 // Example case: Wrong answer 
 // Two-digit month and day: Wrong answer 
 // One-digit day: Wrong answer 
 // One-digit month: Wrong answer 
+
+function formatDate(userDate) {
+    // format from M/D/YYYY to YYYYMMDD
+    let parts = userDate.split('/')
+    y = parts[2]
+    m = parts[0]
+    d = parts[1]
+    if (m.length === 1) m = '0' + m;
+    if (d.length === 1) d = '0' + d;
+    return y + m + d;
+}
+
+console.log(formatDate("12/31/2014"));
 
 //========================================================================================
 
@@ -168,6 +180,38 @@ console.log(document.body.innerHTML);
 // Remove single image: Wrong answer 
 // Remove multiple images: Wrong answer
 
+
+function setup() {
+    // Write your code here.
+   let buttons = document.getElementsByClassName("remove");
+   for (let i=0; i< buttons.length; i++) {
+   	buttons[i].addEventListener('click', click)
+   }
+}
+
+function click(event) {
+	let elem = event.target.parentNode
+	let parent = elem.parentNode
+	parent.removeChild(elem)
+}
+
+// Example case. 
+document.body.innerHTML = `
+<div class="image">
+  <img src="https://goo.gl/kjzfbE" alt="First">
+  <button class="remove">X</button>
+</div>
+<div class="image">
+  <img src="https://goo.gl/d2JncW" alt="Second">
+  <button class="remove">X</button>
+</div>`;
+
+setup();
+
+document.getElementsByClassName("remove")[0].click();
+console.log(document.body.innerHTML);
+
+
 //========================================================================================
 // 6. Closures
 // Fix the bugs in the registerHandlers function. An alert should display anchor's zero-based 
@@ -199,6 +243,29 @@ function registerHandlers() {
 // Duplicate links: Wrong answer 
 // Various links: Wrong answer
 
+function registerHandlers() {
+    var as = document.getElementsByTagName('a');
+    for (var i = 0; i < as.length; i++) {
+      as[i].onclick = factory(i)
+    }
+  }
+  
+  function factory(i) {
+      return (() => {
+        alert(i);
+        return false;
+      })
+  }
+  
+  
+  /* HTML code for testing purposes (do not submit uncommented):
+  <body>
+    In my life, I used the following web search engines:<br/>
+    <a href="//www.yahoo.com">Yahoo!</a><br/>
+    <a href="//www.altavista.com">AltaVista</a><br/>
+    <a href="//www.google.com">Google</a><br/>
+  </body>
+  */
 
 
 //========================================================================================
@@ -231,3 +298,26 @@ console.log(document.body.innerHTML);
 
 // Example case: Exception 
 // Appending divs: Exception 
+
+function appendChildren(decorateDivFunction) {
+    var allDivs = document.getElementsByTagName("div");
+  
+    var count = allDivs.length;
+  
+    for (var i = 0; i < count; i++) {
+      var newDiv = document.createElement("div");
+      decorateDivFunction(newDiv);
+      allDivs[i].appendChild(newDiv);
+    }
+  }
+  
+  // Example case. 
+  document.body.innerHTML = `
+  <div id="a">
+    <div id="b">
+    </div>
+  </div>`;
+  
+  //appendChildren(function(div) {});
+  console.log(document.body.innerHTML);
+  
