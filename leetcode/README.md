@@ -148,3 +148,7 @@ Implement Fizz Buzz problem with loop
 ### (LeetCode, Easy) Fizz Buzz Recursive
 
 Implement Fizz Buzz problem with recursion
+
+### (LeetCode, Easy) and inteview question
+
+Implement Finanochi
