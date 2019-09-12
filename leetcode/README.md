@@ -152,3 +152,7 @@ Implement Fizz Buzz problem with recursion
 ### (LeetCode, Easy) and inteview question
 
 Implement Finanochi
+
+### (Interview problem)
+
+struct_macro - create a macro that gives byte offset of field of a struct within a struct.
