@@ -156,3 +156,7 @@ Implement Finanochi
 ### (Interview problem)
 
 struct_macro - create a macro that gives byte offset of field of a struct within a struct.
+
+### (FreeCodeCamp , Hard) Caclulate water held in blocks
+
+Given array of block heights, calculate the total area/water that could be held.
